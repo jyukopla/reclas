@@ -1,0 +1,219 @@
+@include media-breakpoint-up(xs) {
+  .mosaic-enabled .tint-wall-placeholder {
+    content: url(../icons/fontawesome-twitter-black.svg);
+    opacity: 0.75;
+    width: 300px * 0.9286;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tint-list {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  .tint-list,
+  .tint-list.pat-carousel.slick-slider {
+    overflow: auto;
+
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .tint-wall .tint-wall-item,
+  .tint-wall.pat-carousel.slick-slider .slick-slide {
+    display: flex;
+    height: 300px;
+
+    background-color: $gray;
+    color: $blue;
+
+    font-size: 16px;
+
+    .content {
+      z-index: 1;
+
+      padding-top: 50px;
+      margin-left: 50px;
+      margin-right: 50px;
+
+      &:before {
+        z-index: -1;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      &.filtered {
+        color: white;
+      }
+
+      a {
+        color: $red;
+        font-weight: 700;
+        &:hover {
+          color: $red;
+          text-decoration: none;
+        }
+      }
+    }
+    button.share[aria-expanded=true] + .content {
+      &.blue-filter {
+        background-color: white;
+      }
+    }
+
+    &.tint-wall-image {
+      .content {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      &:hover .content {
+        opacity: 1;
+      }
+    }
+
+    a.link {
+      display: flex;
+      align-items: center;
+      z-index: 1;
+
+      position: absolute;
+      top: 10%;
+      left: 10%;
+
+      width: 50px;
+      height: 50px;
+
+      padding: 0;
+      margin: 0;
+
+      font-size: 24px;
+      border-radius: 50%;
+
+      background-color: white;
+      color: $red;
+
+      &.fa:before {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.fa-twitter:before {
+        content: url(../icons/fontawesome-twitter-flame.svg);
+      }
+      &.fa-instagram:before {
+        content: url(../icons/fontawesome-instagram-flame.svg);
+      }
+    }
+
+    button.share {
+      position: absolute;
+      z-index: 3;
+
+      width: 50px;
+      height: 50px;
+
+      padding: 0;
+      margin: 0;
+      border: 0;
+
+      top: 10%;
+      right: 0;
+
+      font-size: 24px;
+
+      background-color: $red;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover, &:focus {
+        outline: 0;
+        box-shadow: none;
+      }
+
+      &.fa:before {
+        vertical-align: -0.2em;
+      }
+
+      &.fa[aria-expanded=true]:before {
+        content: url(../icons/fontawesome-cancel-white.svg);
+      }
+      &.aria-expand-transition.fa:before {
+        content: url(../icons/fontawesome-cancel-white.svg);
+      }
+      &.aria-expand-transition.fa[aria-expanded=true]:before {
+        content: url(../icons/fontawesome-share-white.svg);
+      }
+    }
+
+    .social-links {
+      position: absolute;
+
+      display: flex;
+      z-index: 2;
+      background-color: $red;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+
+      color: white;
+      text-align: center;
+
+      font-family: Lato, sans-serif;
+      font-size: 17px;
+      line-height: 30px;
+
+      a {
+        display: block;
+
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 1px;
+
+        color: white;
+
+        &:hover, &:active, &:link {
+          text-decoration: none;
+        }
+      }
+
+      animation-duration: 0.4s;
+      animation-iteration-count: 1;
+
+      @keyframes social-links-show {
+        0% {
+          background: white;
+          opacity: 1;
+        }
+        100% {
+          background: $red;
+          opacity: 1;
+        }
+      }
+
+      opacity: 1;
+      &.aria-expand-transition {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        background-color: white;
+      }
+
+      &[aria-hidden=true] {
+        display: none;
+        &.aria-expand-transition {
+          display: flex;
+          animation-name: social-links-show;
+        }
+      }
+    }
+  }
+}

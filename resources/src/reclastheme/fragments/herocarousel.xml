@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="plone">
+  <schema>
+    <field name="items" type="zope.schema.List">
+      <form:widget type="plone.app.z3cform.widget.RelatedItemsFieldWidget"/>
+      <title i18n:translate="herocarousel_items_label">Carousel items</title>
+      <value_type type="zope.schema.Choice">
+        <source>collective.themefragments.tiles.CatalogSource</source>
+      </value_type>
+      <required>False</required>
+    </field>
+    <fieldset name="settings"
+              label="Settings"
+              i18n:attributes="label herocarousel_settings_label">
+      <field name="settings" type="zope.schema.List">
+        <form:widget type="z3c.form.browser.textlines.TextLinesFieldWidget">
+          <klass>textarea-widget pat-items-settings-widget</klass>
+        </form:widget>
+        <title i18n:translate="herocarousel_item_settings_label">Carousel item settings</title>
+        <description i18n:translate="herocarousel_item_settings_help">
+          Override texts and define color filters for carousel items
+        </description>
+        <value_type type="zope.schema.TextLine" />
+        <required>False</required>
+      </field>
+    </fieldset>
+  </schema>
+</model>

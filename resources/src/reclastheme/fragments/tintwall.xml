@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form"
+       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="plone">
+  <schema>
+    <field name="url" type="zope.schema.Choice">
+      <title i18n:translate="tint_wall_url_label">TINT stream</title>
+      <values>
+        <element key="https://api.tintup.com/v1/feed/jyuniversity?api_token=a310da79f98ce4a80cd2a84b37e591ee69cff453">jyuniversity</element>
+      </values>
+      <default>https://api.tintup.com/v1/feed/jyuniversity?api_token=a310da79f98ce4a80cd2a84b37e591ee69cff453">jyuniversity</default>
+      <required>True</required>
+    </field>
+    <field name="sources" type="zope.schema.List"
+           form:widget="z3c.form.browser.checkbox.CheckBoxFieldWidget">
+      <title i18n:translate="tint_wall_tabs_label">Sources</title>
+      <value_type type="zope.schema.Choice">
+        <values>
+          <element key="twitter" i18n:translate="tint_wall_twitter_label">Twitter</element>
+          <element key="instagram" i18n:translate="tint_wall_instagram_label">Instagram</element>
+          <element key="other" i18n:translate="tint_wall_other_label">Other</element>
+        </values>
+      </value_type>
+      <required>True</required>
+      <default>
+        <element>twitter</element>
+        <element>instagram</element>
+        <element>other</element>
+      </default>
+    </field>
+    <field name="amount" type="zope.schema.Choice">
+      <title i18n:translate="tint_wall_amount_label">Size</title>
+      <description i18n:translate="tint_wall_amount_help">Maximum number of shown TINT items.</description>
+      <values>
+        <element>3</element>
+        <element>6</element>
+        <element>9</element>
+        <element>12</element>
+      </values>
+      <required>True</required>
+      <default>9</default>
+    </field>
+    <!--
+    <field name="tags" type="zope.schema.List">
+      <title i18n:translate="tint_wall_tabs_label">Tags</title>
+      <required>False</required>
+    </field>
+    -->
+    <field name="layout" type="zope.schema.Choice"
+           form:widget="z3c.form.browser.radio.RadioFieldWidget">
+      <title i18n:translate="tint_wall_settings_filter_label">Layout</title>
+      <values>
+        <element key="list" i18n:translate="tint_wall_list_label">List</element>
+        <element key="grid" i18n:translate="tint_wall_grid_label">Grid</element>
+      </values>
+      <default>list</default>
+    </field>
+  </schema>
+</model>

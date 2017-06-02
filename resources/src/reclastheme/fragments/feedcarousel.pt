@@ -1,0 +1,33 @@
+<tal:block tal:define="portal_state context/@@plone_portal_state;
+                       navigation_root portal_state/navigation_root;
+                       api nocall:navigation_root/@@syndication-api|nothing;
+                       feeds view/data/feeds|nothing">
+<div class="pat-feed-carousel-placeholder"
+     tal:condition="python:api and not feeds">
+</div>
+<div class="pat-feed-carousel"
+     tal:condition="python:api and feeds">
+  <ul>
+    <tal:repeat repeat="feed feeds">
+      <li tal:define="url python:feed.split('#')[0];
+          category python:'#' in feed and feed.split('#')[1] or 'Other'"
+           tal:repeat="item python:api.getFeedItems(url)"
+          data-updated="${item/updated/ISO}"
+          data-category="${category}">
+          <span class="date"
+               tal:define="date item/updated|nothing"
+               tal:condition="date"
+               tal:content="python:date.strftime('%d.%m.%Y')">6.9.2016</span>
+        <a href="${item/url}"
+           title="${item/summary}"
+             tal:condition="item/summary">${item/title}</a>
+        <a href="${item/url}"
+           title="${item/summary}"
+             tal:condition="not:item/summary">${item/title}</a>
+        <em class="category"
+             tal:content="category">News</em>
+      </li>
+    </tal:repeat>
+  </ul>
+</div>
+</tal:block>

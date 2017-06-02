@@ -1,0 +1,141 @@
+<div class="newspick-placeholder"
+     tal:define="uuid view/data/item|nothing"
+     tal:condition="not:uuid">
+</div>
+<tal:block i18n:domain="plone"
+           define="uuid view/data/item|nothing"
+           condition="uuid">
+<tal:block define="portal context/@@plone_portal_state/portal;
+                   catalog nocall:portal/portal_catalog;
+                   results python:catalog(UID=uuid)">
+<div class="newspick-placeholder"
+     tal:define="uuid view/data/item|nothing"
+     tal:condition="not:results">
+</div>
+<tal:block condition="results">
+<tal:block define="obj python:results[0].getObject();
+                   context_state obj/@@plone_context_state;
+                   scales obj/@@images;
+                   rid python:str(random.random())[2:];
+
+                   url context_state/object_url;
+                   topic view/data/topic|nothing;
+                   topic python:topic or obj.Subject() and obj.Subject()[0] or None;
+                   title view/data/title|nothing;
+                   title python:title or context_state.object_title();
+                   short_title view/data/short_title|nothing;
+                   short_title python:short_title or title;
+                   subtitle view/data/subtitle|nothing;
+                   description view/data/description|nothing;
+                   layout view/data/layout|nothing;
+                   image obj/image|nothing;
+
+                   filter view/data/filter|nothing;
+                   filter python:filter in ['red', 'blue'] and filter or None;
+                   filter_class python:filter and ' filtered ' + filter + '-filter' or '';
+
+                   text_align view/data/text_align|nothing;
+                   text_align python:text_align in ['right'] or None;
+                   text_align_class python:text_align and ' text-right' or '';">
+
+  <div class="newspick newspick-default${text_align_class}"
+       tal:define="image_scale python:image and scales.scale('image', scale='pick', direction='down') or '';
+                   image_url python:image_scale and image_scale.url or '';
+                   portrait_scale python:image and scales.scale('image', scale='preview', direction='down') or '';
+                   portrait_url python:portrait_scale and portrait_scale.url or '';"
+       tal:condition="python:layout in ['default', None]">
+    <div class="backdrop${filter_class}">
+      <img src="${image_url}" class="pat-focuspoint"
+           style="min-width: ${image_scale/width}px;"
+           height="${image_scale/height}"
+           data-pat-focuspoint="${focuspoint}"
+           tal:define="focuspoint view/data/focuspoint|nothing"
+           tal:condition="image_url" />
+    </div>
+    <div class="topic" tal:content="topic" tal:condition="topic">
+      News
+    </div>
+    <div class="content">
+      <div class="title hidden-sm-down">
+        <a href="${url}" tal:content="title">Sed augue orci, lacinia eu tincidunt et eleifend nec lacus</a>
+      </div>
+      <div class="title hidden-md-up">
+        <a href="${url}" tal:content="short_title">Sed augue orci, lacinia eu tincidunt</a>
+      </div>
+      <div class="subtitle" tal:content="subtitle" tal:condition="subtitle">
+        Subtitle
+      </div>
+      <div class="footer" tal:condition="description">
+        <div class="portrait">
+          <img src="${portrait_url}" class="pat-focuspoint"
+               data-pat-focuspoint="${focuspoint}"
+               tal:define="focuspoint view/data/focuspoint|nothing" />
+        </div>
+        <div class="description" tal:content="description">
+          Portrait description
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newspick newspick-grand${text_align_class}"
+       tal:define="image_scale python:image and scales.scale('image', scale='pick', direction='down') or '';
+                   image_url python:image_scale and image_scale.url or '';"
+       tal:condition="python:layout in ['grand']">
+    <button class="share pat-aria-expand fa fa-share-alt"
+            id="newspick-${rid}-button"
+            aria-controls="newspick-${rid}-social-links"
+            aria-expanded="false">
+    </button>
+    <div class="backdrop${filter_class}">
+      <img src="${image_url}" class="pat-focuspoint"
+           style="min-width: ${image_scale/width}px;"
+           width="${image_scale/width}"
+           height="${image_scale/height}"
+           data-pat-focuspoint="${focuspoint}"
+           tal:define="focuspoint view/data/focuspoint|nothing"
+           tal:condition="image_url" />
+    </div>
+    <div class="content">
+      <div class="subtitle" tal:content="subtitle">
+        Subtitle
+      </div>
+      <div class="title hidden-sm-down">
+        <a href="${url}" tal:content="title">Sed augue orci, lacinia eu tincidunt et eleifend nec lacus</a>
+      </div>
+      <div class="title hidden-md-up">
+        <a href="${url}" tal:content="short_title">Sed augue orci, lacinia eu tincidunt</a>
+      </div>
+    </div>
+    <div class="social-links" id="newspick-${rid}-social-links" aria-hidden="true"
+         tal:define="facebook string:https://www.facebook.com/sharer.php;
+                     twitter string:https://twitter.com/intent/tweet;
+                     linkedin string:https://www.linkedin.com/shareArticle;
+                     pinterest string:https://pinterest.com/pin/create/bookmarklet/;
+                     facebook_url string:${facebook}?u=${url};
+                     twitter_url string:${twitter}?url=${url}&title=${title};
+                     linkedin_url string:${linkedin}?url=${url}&title=${title};
+                     pinterest_url string:${pinterest}?url=${url}&description=${title};
+                     pinterest_media_url string:${pinterest}?media=${image_url}&url=${url}&description=${title}">
+      <p i18n:translate="">Share it on</p>
+      <a href="${facebook_url}">
+        Facebook
+      </a>
+      <a href="${twitter_url}">
+        Twitter
+      </a>
+      <a href="${linkedin_url}">
+        Linkedin
+      </a>
+      <a href="${pinterest_media_url}" tal:condition="image|nothing">
+        Pinterest
+      </a>
+      <a href="${pinterest_url}" tal:condition="not:image|nothing">
+        Pinterest
+      </a>
+    </div>
+  </div>
+</tal:block>
+</tal:block>
+</tal:block>
+</tal:block>

@@ -1,0 +1,124 @@
+<tal:block tal:define="portal_state context/@@plone_portal_state;
+                       navigation_root portal_state/navigation_root;
+                       api nocall:navigation_root/@@syndication-api|nothing;
+                       url view/data/url|nothing;
+                       sources view/data/sources|nothing;
+                       amount view/data/amount|nothing;
+                       amount python:int(amount or '9');
+                       layout view/data/layout|string:list"
+            i18n:domain="plone">
+<div class="tint-wall-placeholder"
+     tal:condition="python:api and not url">
+</div>
+<tal:list condition="python:api and url and layout == 'list'">
+  <div class="row no-gutters tint-wall tint-list pat-carousel"
+       data-pat-carousel="slide: div; dots: false;
+                          xs: 1; md: 2; xl: 3"
+       tal:condition="python:api and url">
+    <tal:repeat define="items python:api.getFeedItems(url, 300);
+                        items python:not sources and items or
+                        [item for item in items if item['social_id'].split('_', 1)[0] in sources]"
+                repeat="item python:items[:amount]">
+      <metal:item define-macro="item">
+      <div class="col-12 col-md-6 col-xl-4 no-gutters tint-wall-item"
+           tal:define="rid python:str(random.random())[2:];
+                       title item/title|item/comment|string:;
+                       words python:title.split();
+                       words python:len(words) < 25 and words or [];
+                       image item/image|nothing;
+                       url item/url|string:;
+                       source item/social_id|string:;
+                       source python:source.split('_', 1)[0];
+                       style string:background-image: url(${item/image});
+                       style python:image and style or '';
+                       klass string:col-12 col-md-6 col-xl-4 no-gutters tint-wall-item;
+                       klass python:image and klass + ' tint-wall-image' or klass;
+                       klass python:words and klass + ' tint-wall-text' or klass;"
+           tal:attributes="style style; class klass">
+        <div class="content"
+             tal:define="klass string:content;
+                         klass python:image and words and klass + ' filtered blue-filter' or klass"
+             tal:attributes="class klass"
+             tal:condition="words">
+          <tal:words repeat="word words">
+            <span tal:replace="word" tal:condition="not:python:word.startswith('#')">
+              Word
+            </span>
+            <tal:tag define="hashtag python:word and word[1:] or ''"
+                     condition="python:word.startswith('#')">
+              <a href="https://www.instagram.com/explore/tags/${hashtag}/"
+                   tal:condition="python:source == 'instagram' and hashtag"
+                   tal:content="word">
+                #hashtag
+              </a>
+              <a href="https://twitter.com/hashtag/${hashtag}"
+                 tal:condition="python:source == 'twitter' and hashtag"
+                 tal:content="word">
+                #hashtag
+              </a>
+              <span class="red"
+                    tal:condition="python:source not in ['twitter', 'instagram']"
+                    tal:content="word">
+                #hashtag
+              </span>
+            </tal:tag>
+          </tal:words>
+        </div>
+        <a href="${url}" class="link fa fa-twitter" title="Twitter"
+           tal:condition="python:source == 'twitter'"></a>
+        <a href="${url}" class="link fa fa-instagram" title="Instagram"
+           tal:condition="python:source == 'instagram'"></a>
+        <a href="${url}" class="link fa fa-rss" title="${source}"
+           tal:condition="python:source not in ['twitter', 'instagram']"></a>
+        <button class="share pat-aria-expand fa fa-share-alt"
+                id="tint-wall-${rid}-button"
+                aria-label="Toggle share links"
+                aria-controls="tint-wall-${rid}-social-links"
+                aria-expanded="false"
+                data-pat-aria-expand="delay:300"
+                i18n:attributes="aria-label"></button>
+        <div class="social-links" id="tint-wall-${rid}-social-links" aria-hidden="true"
+             tal:define="facebook string:https://www.facebook.com/sharer.php;
+                         twitter string:https://twitter.com/intent/tweet;
+                         linkedin string:https://www.linkedin.com/shareArticle;
+                         pinterest string:https://pinterest.com/pin/create/bookmarklet/;
+                         facebook_url string:${facebook}?u=${url};
+                         twitter_url string:${twitter}?url=${url}&title=${title};
+                         linkedin_url string:${linkedin}?url=${url}&title=${title};
+                         pinterest_url string:${pinterest}?url=${url}&description=${title};
+                         pinterest_media_url string:${pinterest}?media=${image}&url=${url}&description=${title}">
+          <p i18n:translate="">Share it on</p>
+          <a href="${facebook_url}">
+            Facebook
+          </a>
+          <a href="${twitter_url}">
+            Twitter
+          </a>
+          <a href="${linkedin_url}">
+            Linkedin
+          </a>
+          <a href="${pinterest_media_url}" tal:condition="image|nothing">
+            Pinterest
+          </a>
+          <a href="${pinterest_url}" tal:condition="not:image|nothing">
+            Pinterest
+          </a>
+        </div>
+      </div>
+      </metal:item>
+    </tal:repeat>
+  </div>
+</tal:list>
+<tal:grid condition="python:api and url and layout == 'grid'">
+  <div class="row no-gutters tint-wall"
+       data-pat-carousel="slide: div; dots: false;
+                          xs: 1; lg: false"
+       tal:condition="python:api and url">
+    <tal:repeat repeat="item python:api.getFeedItems(url, 300)[:9]">
+      <metal:item metal:use-macro="template/macros/item">
+        here be dragons
+      </metal:item>
+    </tal:repeat>
+  </div>
+</tal:grid>
+</tal:block>

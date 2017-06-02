@@ -1,0 +1,15 @@
+<rules xmlns="http://namespaces.plone.org/diazo"
+       xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- 'theme' is the node with data-tile="" -->
+  <!-- 'content' is the /body node the tile  -->
+
+  <replace theme="/*">
+    <div>
+      <xsl:apply-templates select="/body/*[node()]" />
+    </div>
+  </replace>
+
+  <xsl:template match="/body/nav" />
+
+</rules>

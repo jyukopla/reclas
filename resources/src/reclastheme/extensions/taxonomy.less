@@ -1,0 +1,35 @@
+// Collective.taxonomy
+@import (css) '++resource++collective.taxonomy.css';
+.taxonomy-tree {
+  .pencil-icon, .icon-plus, .icon-minus, .icon-flow-split {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .react-pencil {
+    clear: left;
+    input {
+      float: left;
+    }
+    .pencil-icon {
+      background-image: url(../icons/entypo-pencil-black.svg);
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .icon-plus {
+    background-image: url(../icons/entypo-plus-black.svg);
+  }
+  .icon-minus {
+    background-image: url(../icons/entypo-minus-black.svg);
+  }
+  .icon-flow-split {
+    display: none;
+    background-image: url(../icons/entypo-flow-branch-black.svg);
+  }
+}
+

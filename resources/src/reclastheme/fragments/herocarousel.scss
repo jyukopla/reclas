@@ -1,0 +1,169 @@
+@include media-breakpoint-up(xs) {
+  .mosaic-enabled .hero-carousel-placeholder {
+    content: url(../icons/entypo-picture-black.svg);
+    opacity: 0.75;
+    width: 100%;
+    height: 20em;
+  }
+
+  .hero-carousel {
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+  }
+
+  .hero-carousel-item {
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .content {
+      z-index: 1;
+      width: 100%;
+
+      color: white;
+      font-family: Aleo, serif;
+      font-size: 4rem;
+      text-align: center;
+
+      a { color: white; }
+      a:hover { text-decoration: none; }
+    }
+  }
+
+  .hero-carousel-item + .hero-carousel-item {
+    display: none;
+  }
+
+  .hero-carousel-item.slick-slide + .hero-carousel-item.slick-slide {
+    display: flex;
+  }
+
+  .hero-carousel.pat-carousel.slick-slider {
+    padding: 0;
+    overflow: auto;
+
+    .slick-list, .slick-track {
+      width: 100%;
+    }
+
+    .slick-slide {
+      display: flex;
+    }
+
+    .slick-dots{
+      position: absolute;
+      bottom: 10vh;
+
+      z-index: 2;
+
+      display: block;
+
+      width: 100%;
+      padding: 0;
+
+      list-style: none;
+
+      text-align: center;
+      li {
+        position: relative;
+
+        display: inline-block;
+
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        padding: 0;
+
+        cursor: pointer;
+        button {
+          font-size: 0;
+          line-height: 0;
+
+          display: block;
+
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+
+          cursor: pointer;
+
+          color: transparent;
+          border: 0;
+          outline: none;
+          background: transparent;
+        }
+        button:hover, button:focus {
+          outline: none;
+        }
+        button:before {
+          font-size: 60px;
+          line-height: 20px;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          width: 20px;
+          height: 20px;
+
+          content: '•';
+          text-align: center;
+          color: white;
+
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+      li.slick-active button:before{
+        color: $gold;
+      }
+    }
+    .slick-arrow{
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+      position: absolute;
+      z-index: 99;
+    }
+    .slick-prev{
+      left: 20px;
+      &:before {
+        content: url(../icons/fontawesome-left-open-white.svg);
+      }
+    }
+    .slick-next {
+      right: 20px;
+      &:before {
+        content: url(../icons/fontawesome-right-open-white.svg);
+      }
+    }
+  }
+  .mosaic-panel[data-panel="carousel"] {
+    width: 100%;
+    padding: 0;
+    .mosaic-tile {
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .hero-carousel-item {
+    .content {
+      padding: 0 1em;
+    }
+  }
+}

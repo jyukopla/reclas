@@ -1,0 +1,52 @@
+<tal:block i18n:domain="plone"
+           define="portal context/@@plone_portal_state/portal;
+                   catalog nocall:portal/portal_catalog;
+                   data view/data|python:{};
+                   settings python:dict([line.split('|', 1) for line
+                                         in (data.get('settings') or []) if '|' in line]);
+                   items python:data.get('items') or []">
+<div class="hero-carousel-placeholder" tal:condition="not:items"></div>
+<nav class="hero-carousel pat-carousel" tal:condition="items">
+  <tal:repeat repeat="uuid items">
+    <tal:block define="results python:catalog(UID=uuid)"
+               condition="results">
+      <div tal:define="item python:results[0];
+                       obj python:item.getObject();
+                       scales obj/@@images;
+                       image obj/image|nothing;
+                       image_scale python:image and scales.scale('image', scale='banner-tall', direction='up') or '';
+                       image_url python:image_scale and image_scale.url or '';
+                       portal_type obj/portal_type|nothing;
+                       item_settings python:(settings.get(uuid) or '').split('|');
+                       item_caption python:len(item_settings) and item_settings[0] or '';
+                       item_filter python:len(item_settings) > 1 and item_settings[1] or 'blue';
+                       filter_klass python:{'red': ' filtered red-filter',
+                                            'red-soft': ' filtered red-soft-filter',
+                                            'blue': ' filtered blue-filter',
+                                            'blue-soft': ' filtered blue-soft-filter'}.get(item_filter, '');"
+          class="hero-carousel-item${filter_klass}"
+          style="background-image: url(${image_url})">
+
+        <div class="content"
+             tal:condition="python:portal_type in ['Image'] and item_caption"
+             tal:content="item_caption">
+          Here be dragons!
+        </div>
+
+        <div class="content"
+             tal:condition="python:portal_type not in ['Image']">
+          <a href="${obj/absolute_url}" title="${obj/Title}"
+             tal:content="obj/Title" tal:condition="not:item_caption">
+              Here be dragons!
+          </a>
+          <a href="${obj/absolute_url}" title="${obj/Title}"
+             tal:content="item_caption" tal:condition="item_caption">
+            Here be dragons!
+          </a>
+        </div>
+
+      </div>
+    </tal:block>
+  </tal:repeat>
+</nav>
+</tal:block>

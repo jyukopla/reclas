@@ -1,0 +1,22 @@
+<tal:condition define="portal_type context/portal_type|string:"
+               condition="python:portal_type in ['Document',
+                                                 'News Item',
+                                                 'jyu.newsitem.dissertation',
+                                                 'jyu.newsitem.internal_news_item',
+                                                 'jyu.newsitem.external_news_item',
+                                                 'jyu.newsitem.internal_event',
+                                                 'jyu.newsitem.externa_event']">
+<div class="row date-and-share" i18n:domain="plone">
+  <div class="col-12">
+    <div class="float-left document-date"
+          tal:define="date context/Date|nothing|string:;
+                      portal_type context/portal_type/lower|string:;
+                      modified context/ModificationDate|nothing;
+                      date python:'news' in portal_type and date or modified;
+                      date python:date and DateTime(date) or None"
+          tal:condition="date">
+      <div tal:content="python:date.strftime('%d.%m.%Y')">11.3.2017</div>
+    </div>
+  </div>
+</div>
+</tal:condition>

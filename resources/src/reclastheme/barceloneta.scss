@@ -1,0 +1,120 @@
+// Available Mixins
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/variables.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.prefixes.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.tabfocus.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.images.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.forms.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.borderradius.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.buttons.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.clearfix.plone.scss";
+//@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.gridframework.plone.scss";
+//@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.grid.plone.scss";
+//@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/mixin.font.plone.scss";
+
+// Global Picks
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/alerts.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/formtabbing.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/controlpanels.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/pickadate.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/modal.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/pagination.plone.scss";
+@import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/portlets.plone.scss";
+// @import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/sitenav.plone.scss";
+
+// Prefixed picks
+article, .plone-modal-wrapper {
+  @import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/forms.plone.scss";
+  @import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/buttons.plone.scss";
+}
+.portlets-manager {
+  @import "~plonetheme.barceloneta/plonetheme/barceloneta/theme/scss/portlets.plone.scss";
+}
+
+// Custom Patches
+ul.configlets { list-style-type: none; padding: 0; margin: 0; text-align: center; }
+.plone-modal .plone-modal-content { background: #fcfcfd; }
+.plone-modal .plone-modal-dialog .plone-modal-header .plone-modal-close { margin-top: 0; }
+
+// Hide BS4 caret
+.pat-structure .dropdown-toggle:after{ display: none; }
+
+// Fix to not hide legacy 'invisible' (border) table class
+table.invisible { visibility: visible !important; }
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only, .hiddenStructure,
+.crud-form .header-select{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+  color: #fff;
+  background-color: #000;
+}
+.sr-only a, .hiddenStructure a {
+  color: #fff;
+  background-color: #000;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+.template-usergroup-groupprefs form,
+.template-usergroup-userprefs form {
+  overflow: auto;
+}
+.plone-toolbar-logo > img {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+body.plone-toolbar-top, body.plone-toolbar-left {
+  #edit-zone {
+    #contentview-contentrules {
+      display: none;
+    }
+    nav ul.plone-toolbar-main {
+      display: none;
+    }
+  }
+}
+body.plone-toolbar-top, body.plone-toolbar-left {
+  &.userrole-editor,
+  &.userrole-reviewer,
+  &.userrole-manager {
+    #edit-zone {
+      nav ul.plone-toolbar-main {
+        display: inline-block;
+      }
+    }
+  }
+}
