@@ -2,6 +2,7 @@
 
 @include media-breakpoint-up(xs) {
   .more-about {
+    position: relative;
     height: 560px;
 
     background: $gray-dark;
@@ -12,6 +13,17 @@
 
     display: flex;
     align-items: center;
+
+    &:before {
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $gray-dark;
+      opacity: 0.333;
+    }
 
     nav {
       margin-left: auto;
