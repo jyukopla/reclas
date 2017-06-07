@@ -149,6 +149,12 @@
       "css": "search",
       "code": 59405,
       "src": "fontawesome"
+    },
+    {
+      "uid": "dea706a9bd3144316ce37406ec10f469",
+      "css": "level-up",
+      "code": 61768,
+      "src": "fontawesome"
     }
   ]
 }

@@ -326,7 +326,7 @@ article, .plone-modal-wrapper {
 // Fix to not hide table.invisible (borderless table style in Plone)
 table.invisible { visibility: visible !important; }
 
-// Fix issue where modals had dark backround
+// Fix issue where modals had dark background
 .plone-modal .plone-modal-content {
   background: $plone-body-bg;
 }
@@ -334,20 +334,4 @@ table.invisible { visibility: visible !important; }
 // Fix issue where modals close button was mispositioned
 .plone-modal .plone-modal-dialog .plone-modal-header .plone-modal-close {
   margin-top: 0;
-}
-
-// Fix issue where Users and Groups form had scrollbars
-.template-usergroup-groupprefs form,
-.template-usergroup-userprefs form {
-  overflow: auto;
-}
-
-// Fix issue where pat-structure navbar did not work with BS4
-.pat-structure .navbar {
-  display: block;
-}
-
-// Fix issue where BS4 added extra caret for contents action
-.pat-structure .dropdown-toggle:after {
-  display: none;
 }

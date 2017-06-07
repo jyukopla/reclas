@@ -1,2 +1,113 @@
 @import '@{plone-logged-in}';
 @import './extensions/ploneformgen-edit';
+
+// Fix issue where Users and Groups form had scrollbars
+.template-usergroup-groupprefs form,
+.template-usergroup-userprefs form {
+  overflow: auto;
+}
+
+// Fix issue where pat-structure navbar did not work with BS4
+.pat-structure .navbar {
+  display: block;
+}
+
+// Fix issue where BS4 added extra caret for contents action
+.pat-structure .dropdown-toggle:after {
+  display: none;
+}
+.pattern-relateditems-container .dropdown-toggle .caret {
+  display: none;
+}
+
+// Hide related items mode selector
+.pattern-relateditems-container .toolbar .mode-selector {
+  display: none;
+}
+
+// Fix related items favorites position
+.pattern-relateditems-container .toolbar {
+  font-size: 14px;
+  line-height: 15px;
+}
+.pattern-relateditems-container .toolbar .controls {
+  float: right;
+  padding: 0;
+  margin: 0;
+  .btn { font-size: 13px; }
+}
+
+// Fix related items selection
+.pattern-relateditems-result a.pattern-relateditems-result-select {
+  display: block;
+}
+
+// Fix related items one level up
+.pattern-relateditems-result.one-level-up {
+  font-size: 200%;
+  line-height: 1;
+  padding: 0 0.2em;
+  a, a:hover { color: #f1563f; }
+  .pattern-relateditems-buttons,
+  .pattern-relateditems-result-path {
+    display: none;
+  }
+  .pattern-relateditems-result-title:before {
+    content: url(icons/fontawesome-level-up-red.svg);
+    width: 0.5714em;
+    transform: scaleX(-1);
+    vertical-align: -0.1em;
+    margin-left: -0.25em;
+    margin-right: 0.3em;
+  }
+  &:hover {
+    background-color: #d8d8d8;
+  }
+}
+
+// Fix related items icon positioning
+.pattern-relateditems-item [class*="contenttype-"]:before,
+.pattern-relateditems-result [class*="contenttype-"]:before {
+  padding-right: 0.2em;
+}
+.pattern-relateditems-result [class*="contenttype-"]:before {
+  vertical-align: top;
+}
+.pattern-relateditems-item img ~ [class*="contenttype-"]:before,
+.pattern-relateditems-result img ~ [class*="contenttype-"]:before {
+  display: none;
+}
+.pattern-relateditems-item img + br,
+.pattern-relateditems-result img + br {
+  display: none;
+}
+
+// Fix to show double arrow for relateditems folder selection
+.pattern-relateditems-result {
+  position: relative;
+}
+.pattern-relateditems-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.pattern-relateditems-buttons a.pattern-relateditems-result-browse {
+  &:before, &:after {
+    display: inline-block;
+    content: url(icons/fontawesome-right-open-red.svg);
+    height: 1em;
+    width: 0.714em;
+  }
+  &:hover:before, &:hover:after {
+    content: url(icons/fontawesome-right-open-black.svg);
+  }
+}
+
+// Fix to show TinyMCE anchor elements on Mosaic Editor
+body#tinymce, body.mosaic-enabled {
+  .mce-item-anchor {
+    visibility: visible;
+    width: 9px !important;
+    height: 9px !important;
+  }
+}

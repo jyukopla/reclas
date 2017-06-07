@@ -36,8 +36,10 @@
       <value_type type="plone.registry.field.TextLine" />
     </field>
     <value>
+      <element key="/Plone/images" i18n:translate="">Images</element>
       <element key="/reclas/en/images" i18n:translate="">Images</element>
-      <element key="/reclas/fi/kuvat" i18n:translate="">Images</element>
+      <element key="/reclas/fi/images" i18n:translate="">Kuvat</element>
+      <element key="/reclas/fi/kuvat" i18n:translate="">Kuvat</element>
       <element key="/reclas/images" i18n:translate="">Images</element>
     </value>
   </record>
