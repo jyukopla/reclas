@@ -1,9 +1,0 @@
-<a class="twitter-timeline pat-embed"
-   href="https://twitter.com/${username}"
-   data-pat-embed="src://platform.twitter.com/widgets.js;width:${width};height:${height}"
-   tal:define="username view/data/username|nothing;
-               width view/data/width|nothing;
-               width python:width and str(width) or '100%';
-               height view/data/height|nothing;
-               height python:height and str(height)"
-   tal:condition="username">Twitter / ${username}</a>
