@@ -7,10 +7,12 @@ const PlonePlugin = require('plonetheme-webpack-plugin');
 const SITENAME = process.env.SITENAME || 'Plone';
 const THEMENAME = process.env.THEMENAME || 'reclastheme';
 const PUBLICPATH = process.env.PUBLICPATH || '/' + SITENAME + '/++theme++' + THEMENAME + '/';
+const DISTPATH = process.env.DISTPATH || 'theme';
 
 const PATHS = {
   src: path.join(__dirname, 'src', THEMENAME),
   build: path.join(__dirname, 'theme', THEMENAME),
+  dist: path.join(__dirname, DISTPATH, THEMENAME),
   mosaic: path.join(
     __dirname, 'node_modules', 'plone-mosaic',
     'src', 'plone', 'app', 'mosaic', 'browser', 'static', 'js')
@@ -37,7 +39,7 @@ const common = {
    'logged-in': path.join(PATHS.src, 'logged-in')
   },
   output: {
-    path: PATHS.build
+    path: PATHS.dist
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
