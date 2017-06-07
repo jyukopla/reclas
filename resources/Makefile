@@ -7,10 +7,10 @@ SOURCES = \
 
 all: build
 
-build: clean node_modules $(SOURCES)
+build: node_modules $(SOURCES)
 	yarn run build
 
-watch: clean node_modules $(SOURCES)
+watch: node_modules $(SOURCES)
 	yarn run watch
 
 clean:
