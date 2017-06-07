@@ -39,6 +39,7 @@
 
     .header-nav {
       @include make-col($grid-columns);
+      order: 2;
 
       font-size: $font-size-lg;
       font-weight: 600;
@@ -56,6 +57,9 @@
       }
       a {
         color: $gray-lighter;
+        &:hover {
+          color: $red;
+        }
       }
       a.navTreeCurrentNode {
         color: $red;
@@ -77,6 +81,7 @@
     }
     .jyu-brand {
       @include make-col($grid-columns);
+      order: 3;
 
       a {
         display: block;
@@ -86,7 +91,7 @@
         width: 180px;
         height: 109px;
 
-        margin: 0 0 20px 0;
+        margin: 0 auto 50px auto;
 
         &:before {
           display: inline-block;
@@ -107,16 +112,19 @@
     }
     .header-nav {
       order: 3;
-      ul {
-        height: 80px;
-      }
     }
     .jyu-brand {
       @include make-col($grid-columns / 2);
       order: 2;
+
+      position: absolute;
+      bottom: 50px;
+      right: 0;
+
       a {
-        margin: 40px auto 0 0;
+        margin: 40px 0 0 0;
       }
+
     }
   }
 }
@@ -128,6 +136,12 @@
       ul {
         white-space: nowrap;
       }
+      ul {
+        height: 80px;
+      }
+    }
+    .jyu-brand {
+      position: static;
     }
   }
 }
@@ -149,7 +163,6 @@
     }
     .header-nav {
       @include make-col($grid-columns / 2);
-      order: 2;
       ul {
         margin: 35px 0 0 0;
         padding: 0;
@@ -157,9 +170,8 @@
     }
     .jyu-brand {
       @include make-col($grid-columns / 4);
-      order: 3;
       a {
-        margin: 40px 0 0 auto;
+        margin: 40px 0 0 0;
       }
     }
   }
