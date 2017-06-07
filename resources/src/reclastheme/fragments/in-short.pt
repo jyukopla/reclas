@@ -13,6 +13,7 @@
     <div class="col-12 col-lg-6">
       <h2>Stay in touch</h2>
       <p>
+        <!--
         <a href="#"
            class="fa fa-facebook"
            title="Facebook">
@@ -21,7 +22,8 @@
            class="fa fa-twitter"
            title="Twitter">
         </a>
-        <a href="#"
+        -->
+        <a href="mailto:taina.m.saarinen@jyu.fi"
            class="fa fa-email"
            title="Email">
         </a>
