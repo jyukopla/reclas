@@ -5,6 +5,9 @@
     height: 560px;
 
     background: $gray-dark;
+    background-size: cover;
+
+    filter: grayscale(100%);
     color: $white;
 
     display: flex;

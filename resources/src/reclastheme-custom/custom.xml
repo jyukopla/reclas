@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+  xmlns="http://namespaces.plone.org/diazo"
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- Inject custom.css -->
+  <after content-children="/html/head">
+    <link rel="stylesheet" data-bundle="diazo">
+      <xsl:attribute name="href">
+        <xsl:value-of select="$portal_url" />
+        <xsl:text>/++theme++jyunitytheme-custom/custom.css</xsl:text>
+      </xsl:attribute>
+    </link>
+  </after>
+
+  <!-- Inject custom.js -->
+  <after content-children="/html/body">
+    <xsl:element name="script">
+      <xsl:attribute name="type">
+        <xsl:text>text/javascript</xsl:text>
+      </xsl:attribute>
+      <xsl:attribute name="data-bundle">
+        <xsl:text>diazo</xsl:text>
+      </xsl:attribute>
+      <xsl:attribute name="src">
+        <xsl:value-of select="$portal_url" />
+        <xsl:text>/++theme++jyunitytheme-custom/custom.js</xsl:text>
+      </xsl:attribute>
+    </xsl:element>
+  </after>
+
+</rules>
