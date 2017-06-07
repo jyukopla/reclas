@@ -51,9 +51,8 @@
         margin: 40px 0 50px 0;
         padding: 0;
 
-        text-transform: uppercase;
-        white-space: nowrap;
         list-style-type: none;
+        text-transform: uppercase;
       }
       a {
         color: $gray-lighter;
@@ -103,9 +102,20 @@
 
 @include media-breakpoint-up(sm) {
   .header {
+    .header-brand {
+      @include make-col($grid-columns / 2);
+    }
     .header-nav {
+      order: 3;
       ul {
         height: 80px;
+      }
+    }
+    .jyu-brand {
+      @include make-col($grid-columns / 2);
+      order: 2;
+      a {
+        margin: 40px auto 0 0;
       }
     }
   }
@@ -115,6 +125,9 @@
   .header {
     .header-nav {
       font-size: $font-size-sm;
+      ul {
+        white-space: nowrap;
+      }
     }
   }
 }
@@ -136,6 +149,7 @@
     }
     .header-nav {
       @include make-col($grid-columns / 2);
+      order: 2;
       ul {
         margin: 35px 0 0 0;
         padding: 0;
@@ -143,7 +157,7 @@
     }
     .jyu-brand {
       @include make-col($grid-columns / 4);
-
+      order: 3;
       a {
         margin: 40px 0 0 auto;
       }
