@@ -4,9 +4,7 @@ $gray-description: #68737a;
 
 @include media-breakpoint-up(xs) {
   .container-content {
-    box-shadow: 0 20px 20px $gray;
     background: white;
-
     padding: 20px 20px;
   }
   .container-content, body#tinymce {
@@ -28,6 +26,7 @@ $gray-description: #68737a;
 
 @include media-breakpoint-up(md) {
   .container-content {
+    box-shadow: 0 20px 20px $gray;
     padding: 40px 40px;
   }
 }
