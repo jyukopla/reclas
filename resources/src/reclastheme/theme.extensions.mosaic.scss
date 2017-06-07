@@ -1,0 +1,102 @@
+@import './theme.bootstrap.scss';
+
+.mosaic-enabled, .mosaic-grid, .template-layout {
+  .mosaic-grid-row {
+    position: relative;
+    @include make-row($gutters: $grid-gutter-widths);
+  }
+}
+
+// Mosaic Grid (responsive)
+.mosaic-grid {
+  .mosaic-width-full {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col($grid-columns);
+  }
+  .mosaic-width-half {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include media-breakpoint-up(xs) {
+      @include make-col($grid-columns);
+    }
+    @include media-breakpoint-up(sm) {
+      @include make-col($grid-columns / 2);
+    }
+  }
+  .mosaic-width-quarter {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include media-breakpoint-up(xs) {
+      @include make-col($grid-columns);
+    }
+    @include media-breakpoint-up(sm) {
+      @include make-col($grid-columns / 2);
+    }
+    @include media-breakpoint-up(md) {
+      @include make-col($grid-columns / 4);
+    }
+  }
+  .mosaic-width-three-quarters {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include media-breakpoint-up(xs) {
+      @include make-col($grid-columns);
+    }
+    @include media-breakpoint-up(md) {
+      @include make-col(($grid-columns / 4) * 3);
+    }
+  }
+  .mosaic-width-third {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include media-breakpoint-up(xs) {
+      @include make-col($grid-columns);
+    }
+    @include media-breakpoint-up(sm) {
+      @include make-col($grid-columns / 2);
+    }
+    @include media-breakpoint-up(md) {
+      @include make-col($grid-columns / 3);
+    }
+  }
+  .mosaic-width-two-thirds {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include media-breakpoint-up(xs) {
+      @include make-col($grid-columns);
+    }
+    @include media-breakpoint-up(md) {
+      @include make-col(($grid-columns / 3) * 2);
+    }
+  }
+}
+
+// Mosaic Editor Grid (non-responsive)
+.mosaic-enabled {
+  .mosaic-width-full {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col($grid-columns);
+  }
+  .mosaic-width-half {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col($grid-columns / 2);
+  }
+  .mosaic-width-quarter {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col($grid-columns / 4);
+  }
+  .mosaic-width-three-quarters {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col(($grid-columns / 4) * 3);
+  }
+  .mosaic-width-third {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col($grid-columns / 3);
+  }
+  .mosaic-width-two-thirds {
+    @include make-col-ready($gutters: $grid-gutter-widths);
+    @include make-col(($grid-columns / 3) * 2);
+  }
+}
+
+.mosaic-grid-row.mosaic-no-gutters {
+  .mosaic-grid-cell {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

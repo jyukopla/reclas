@@ -1,0 +1,14 @@
+<footer class="container-fluid more-about">
+  <nav>
+    <p>
+      Remarkable education and<br/>
+      research for changing society.
+    </p>
+    <p>
+      <a href="#"
+         title="More about ReCLaS">
+        More about ReCLaS
+      </a>
+    </p>
+  </nav>
+</footer>

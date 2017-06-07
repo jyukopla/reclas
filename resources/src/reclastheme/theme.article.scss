@@ -1,0 +1,35 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  .row > div > article {
+    h1.documentFirstHeading {
+      font-weight: bold;
+    }
+    box-shadow: 0 20px 20px $gray;
+    background: white;
+
+    padding: 20px 20px;
+
+    h2 {
+      font-family: $font-family-sans-serif;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .row > div > article {
+    padding: 40px 40px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .row > div > article {
+    padding: 60px 60px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .row > div > article {
+    padding: 70px 100px;
+  }
+}

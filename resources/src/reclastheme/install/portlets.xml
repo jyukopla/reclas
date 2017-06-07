@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<portlets>
+  <portletmanager
+      name="plone.leftcolumn"
+      type="plone.app.portlets.interfaces.ILeftColumn"
+      remove="true"
+      />
+  <portletmanager
+      name="plone.rightcolumn"
+      type="plone.app.portlets.interfaces.IRightColumn"
+      remove="true"
+      />
+  <portletmanager
+      name="plone.footerportlets"
+      type="plone.app.portlets.interfaces.IFooter"
+      remove="true"
+      />
+</portlets>

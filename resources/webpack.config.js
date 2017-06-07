@@ -22,10 +22,11 @@ const PLONE = new PlonePlugin({
   sourcePath: PATHS.src,
   momentLocales: ['fi'],
   ignore: [
+    path.join(THEMENAME, 'extensions', '*'),
+    path.join(THEMENAME, 'fonts', '**', '*'),
     path.join(THEMENAME, 'icons', '*'),
-    path.join(THEMENAME, 'designs', '**', '*'),
-    path.join(THEMENAME, 'fragments', '**', '*'),
-    path.join(THEMENAME, '?(*.js|*.jsx|*.css|*.less|*.scss)')
+    path.join(THEMENAME, 'media', '*'),
+    path.join(THEMENAME, '?(*.js|*.css|*.less|*.scss)')
   ],
   debug: false
 });

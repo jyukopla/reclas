@@ -1,0 +1,68 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  .in-short {
+    text-align: center;
+    padding: 80px 0;
+
+    .row > div:first-child {
+      p {
+        line-height: 2;
+      }
+    }
+    .row > div:last-child {
+      padding: 80px 0 0 0;
+    }
+
+    a {
+      display: inline-block;
+
+      width: 90px;
+      height: 90px;
+      margin-right: 1ex;
+
+      background: $white;
+      box-shadow: 0 0 5px $gray-light;
+      font-size: $font-size-lg;
+
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    a.jyu-brand {
+      background: transparent;
+      box-shadow: none;
+
+      width: 260px;
+      height: 192px;
+
+      &:before {
+        display: inline-block;
+        content: url(./media/jyu.svg);
+
+        width: 260px;
+        height: 162px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .in-short {
+    text-align: left;
+
+    .row > div:first-child {
+      text-align: right;
+      padding-right: 100px;
+      p {
+        line-height: 2;
+        float: right;
+        max-width: 400px;
+      }
+    }
+    .row > div:last-child {
+      border-left: 1px solid $red;
+      padding: 0 0 0 100px;
+    }
+  }
+}

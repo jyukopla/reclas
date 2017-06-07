@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="plone">
+
+  <record name="plone.site_title">
+    <value>ReCLaS</value>
+  </record>
+
+  <record name="plone.content_css">
+    <value>
+      <!-- Purge TinyMCE content CSS -->
+    </value>
+  </record>
+
+  <record name="plone.other_settings" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="other_settings">
+    <value>{
+"paste_as_text": false,
+"paste_data_images": false,
+"paste_word_valid_elements": "b,strong,i,em,h1,h2,h3,h4,table,thead,tfoot,tbody,tr,th,td,ul,ol,li,p,a[href]",
+"paste_retain_style_properties": ""
+    }</value>
+  </record>
+
+  <record name="plone.patternoptions">
+    <value>
+      <element key="plone-modal">{"actionOptions": {"displayInModal": false, "timeout": 30000}}</element>
+      <element key="pickadate">{"date": {"selectYears": 200}, "time": {"interval": 5} }</element>
+      <element key="markspeciallinks">{"mark_special_links": false}</element>
+    </value>
+  </record>
+
+  <record name="jyupolicy.base.favorites">
+    <field type="plone.registry.field.Dict">
+      <title>Favorite locations</title>
+      <key_type type="plone.registry.field.TextLine" />
+      <value_type type="plone.registry.field.TextLine" />
+    </field>
+    <value>
+      <element key="/reclas/images" i18n:translate="">Images</element>
+    </value>
+  </record>
+
+  <records interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
+           prefix="plone">
+    <value key="allowed_sizes" purge="true">
+      <element>large 768:768</element>
+      <element>preview 400:400</element>
+      <element>mini 200:200</element>
+      <element>thumb 128:128</element>
+      <element>tile 64:64</element>
+      <element>icon 32:32</element>
+      <element>listing 16:16</element>
+      <element>hero 2000:560</element>
+    </value>
+  </records>
+
+  <!-- Mosaic -->
+  <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_tableofcontents"
+           interface="plone.app.mosaic.interfaces.ITile"
+           remove="true" />
+
+  <records interface="plone.app.mosaic.interfaces.IFormat"
+           prefix="plone.app.mosaic.richtext_toolbar.removeformat">
+    <value key="name">toolbar-removeformat</value>
+    <value key="category">text</value>
+    <value key="label">Remove Format</value>
+    <value key="action">removeformat</value>
+    <value key="icon">false</value>
+    <value key="favorite">false</value>
+    <value key="weight">330</value>
+  </records>
+
+  <record name="plone.app.mosaic.app_tiles.plone_app_standardtiles_html.available_actions">
+    <value purge="false">
+      <element>toolbar-removeformat</element>
+    </value>
+  </record>
+
+  <record name="plone.app.mosaic.widget_actions.plone_app_z3cform_widget_RichTextFieldWidget.actions">
+    <value purge="false">
+      <element>toolbar-removeformat</element>
+    </value>
+  </record>
+
+  <records interface="plone.app.mosaic.interfaces.IFormat"
+           prefix="plone.app.mosaic.formats.no-gutters">
+    <value key="name">no-gutters</value>
+    <value key="category">row</value>
+    <value key="label">No gutters</value>
+    <value key="action">row-toggle-class</value>
+    <value key="icon">true</value>
+    <value key="favorite">false</value>
+    <value key="weight">100</value>
+  </records>
+
+  <record name="plone.app.mosaic.default_available_actions">
+    <value purge="false">
+      <element>no-gutters</element>
+    </value>
+  </record>
+
+  <record name="plone.app.mosaic.hidden_content_layouts">
+    <field type="plone.registry.field.List">
+      <title>Hidden content layouts</title>
+      <value_type type="plone.registry.field.TextLine" />
+    </field>
+    <value purge="true">
+      <element>custom/basic.html::Document</element>
+      <element>default/basic.html::Document</element>
+    </value>
+  </record>
+
+  <record name="plone.app.blocks.default_layout.Document">
+    <field type="plone.registry.field.ASCIILine" />
+    <value>++contentlayout++default/document.html</value>
+  </record>
+
+  <record name="plone.app.blocks.default_layout.Event">
+    <field type="plone.registry.field.ASCIILine" />
+    <value>++contentlayout++default/basic.html</value>
+  </record>
+
+  <record name="plone.app.blocks.default_layout.Folder">
+    <field type="plone.registry.field.ASCIILine" />
+    <value>++contentlayout++default/basic.html</value>
+  </record>
+
+  <record name="plone.app.blocks.default_layout.News-Item">
+    <field type="plone.registry.field.ASCIILine" />
+    <value>++contentlayout++default/document.html</value>
+  </record>
+
+  <record name="plone.defaultSiteLayout">
+    <field type="plone.registry.field.ASCIILine">
+      <required>false</required>
+    </field>
+    <!--<value>++sitelayout++reclas/basic.html</value>-->
+    <value>++theme++reclastheme/designs/sitelayout/reclas/basic.html</value>
+  </record>
+
+  <record name="plone.defaultAjaxLayout">
+    <field type="plone.registry.field.ASCIILine">
+      <required>false</required>
+    </field>
+    <value>++sitelayout++reclas/ajax.html</value>
+  </record>
+
+</registry>

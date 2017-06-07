@@ -1,0 +1,6 @@
+<nav class="sr-only" i18n:domain="plone">
+  <a href="#content" title="Skip to main content"
+     i18n:attributes="title" i18n:translate="">
+    Skip to main content
+  </a>
+</nav>

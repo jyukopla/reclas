@@ -1,0 +1,13 @@
+.fa:before {
+  display: inline-block;
+  vertical-align: -0.1em;
+  height: 1em;
+  width: 1em;
+}
+
+.fa-facebook:before { width: 0.5714em; content: url(./icons/fontawesome-facebook-red.svg); }
+.fa-link:before { width: 0.9286em; content: url(./icons/fontawesome-link-ext-red.svg); }
+.fa-linkedin:before { width: 0.8571em; content: url(./icons/fontawesome-linkedin-red.svg); }
+.fa-email:before { width: 0.8571em; content: url(./icons/fontawesome-mail-red.svg); }
+.fa-search:before { width: 0.9276em; content: url(./icons/fontawesome-search-white.svg); }
+.fa-twitter:before { width: 0.9286em; content: url(./icons/fontawesome-twitter-red.svg); }

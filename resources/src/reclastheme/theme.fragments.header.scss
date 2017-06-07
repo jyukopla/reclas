@@ -1,0 +1,112 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  .header {
+    background: $gray-dark;
+    color: $gray-light;
+
+    font-family: $font-family-sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+
+    .header-brand {
+      @include make-col($grid-columns);
+
+      display: flex;
+      flex-direction: column;
+
+      .navbar-brand {
+        margin: 40px 0 0 0;
+        padding: 0;
+
+        width: 180px;
+        height: 42px;
+
+        &:before {
+          display: inline-block;
+          content: url('./media/reclas.svg');
+          width: 180px;
+          height: 42px;
+        }
+      }
+
+      p {
+        color: $gray;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .header-nav {
+      @include make-col($grid-columns);
+
+      font-weight: 600;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        margin: 40px 0 50px 0;
+        padding: 0;
+
+        text-transform: uppercase;
+        white-space: nowrap;
+        list-style-type: none;
+      }
+      a {
+        color: $gray-lighter;
+      }
+      a.navTreeCurrentNode {
+        color: $red;
+      }
+      // Hide Plone icons
+      a:before {
+        display: none;
+      }
+      // Hide subnavigations
+      .navTreeLevel1 {
+        display: none;
+      }
+      .navTreeLevel2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .header {
+    .header-nav {
+      ul {
+        height: 80px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .header {
+    .header-brand {
+      @include make-col($grid-columns / 2);
+      flex-direction: row;
+      height: 140px;
+
+      .navbar-brand {
+        margin: 0 20px 0 0;
+        padding: 40px 0 0;
+      }
+      p {
+        margin: 0;
+        padding: 35px 0 0 0;
+      }
+    }
+    .header-nav {
+      @include make-col($grid-columns / 2);
+      ul {
+        margin: 35px 0 0 0;
+        padding: 0;
+      }
+    }
+  }
+}

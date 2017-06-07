@@ -1,0 +1,12 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  .hero {
+    height: 560px;
+
+    background: $blue;
+    background-size: cover;
+
+    margin-bottom: -80px;
+  }
+}

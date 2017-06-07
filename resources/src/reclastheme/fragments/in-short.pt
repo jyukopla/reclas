@@ -1,0 +1,37 @@
+<footer class="container in-short">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <h2>Reclas in short</h2>
+      <p>
+        University of Jyväskylä has now established a profiling
+        measure named Research Collegium for Language in
+        Changing Society (ReCLaS), which aims to make
+        a significant contribution towards developing the field
+        theoretically, methodologically and empirically.
+      </p>
+    </div>
+    <div class="col-12 col-lg-6">
+      <h2>Stay in touch</h2>
+      <p>
+        <a href="#"
+           class="fa fa-facebook"
+           title="Facebook">
+        </a>
+        <a href="#"
+           class="fa fa-twitter"
+           title="Twitter">
+        </a>
+        <a href="#"
+           class="fa fa-email"
+           title="Email">
+        </a>
+      </p>
+      <p>
+        <a href="https://www.jyu.fi/en/"
+           class="jyu-brand"
+           title="University of Jyväskylä">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -6,15 +6,23 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     if-content="/html/body[@id='visual-portal-wrapper']">
 
-  <!-- Import Barceloneta rules -->
-  <xi:include href="++theme++barceloneta/rules.xml" />
+  <!-- Drop default stylesheets and scripts -->
+  <drop content="//link[@rel='stylesheet']" />
+  <drop content="//script" />
+
+  <!-- Move scripts within body after bundle -->
+  <after theme-children="/html/body" method="raw"
+         content="/html/head/script[not(@src)]" />
+  <after theme-children="/html/body" method="raw"
+         content="/html/body//script" />
+
+  <!-- Drop logged-in bundles for anonymous users -->
+  <drop css:if-content="body.userrole-anonymous"
+        theme="//*[@data-name='bundle-logged-in']" />
 
   <!-- Import TTW customizations -->
   <xi:include href="++theme++reclastheme-custom/rules.xml">
     <xi:fallback/>
   </xi:include>
-
-  <!-- Configure webpack built bundles -->
-  <xi:include href="webpack.xml" />
 
 </rules>
