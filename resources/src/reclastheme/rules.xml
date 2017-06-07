@@ -5,15 +5,13 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <!-- Drop default stylesheets and scripts -->
-  <drop content="//link[@rel='stylesheet']" />
-  <drop content="//script" />
+  <!-- Drop in-body scripts -->
+  <drop content="//script[not(@data-name)]" />
 
   <!-- Move scripts within body after bundle -->
-  <after theme-children="/html/body" method="raw"
-         content="/html/head/script[not(@src)]" />
-  <after theme-children="/html/body" method="raw"
-         content="/html/body//script" />
+  <after content-children="/html/body" method="raw">
+    <xsl:copy-of select="//script[not(@data-name)]" />
+  </after>
 
   <!-- Drop logged-in bundles for anonymous users -->
   <drop css:if-content="body.userrole-anonymous"
