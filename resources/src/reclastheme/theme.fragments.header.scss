@@ -76,6 +76,28 @@
         display: none;
       }
     }
+    .jyu-brand {
+      @include make-col($grid-columns);
+
+      a {
+        display: block;
+        background: transparent;
+        box-shadow: none;
+
+        width: 180px;
+        height: 109px;
+
+        margin: 0 0 20px 0;
+
+        &:before {
+          display: inline-block;
+          content: url(./media/jyu.svg);
+
+          width: 180px;
+          height: 109px;
+        }
+      }
+    }
   }
 }
 
@@ -100,12 +122,11 @@
 @include media-breakpoint-up(lg) {
   .header {
     .header-brand {
-      @include make-col($grid-columns / 2);
-      flex-direction: row;
-      height: 140px;
+      @include make-col($grid-columns / 4);
+      height: 180px;
 
       .navbar-brand {
-        margin: 0 20px 0 0;
+        margin: 0 20px 20px 0;
         padding: 40px 0 0;
       }
       p {
@@ -118,6 +139,13 @@
       ul {
         margin: 35px 0 0 0;
         padding: 0;
+      }
+    }
+    .jyu-brand {
+      @include make-col($grid-columns / 4);
+
+      a {
+        margin: 40px 0 0 auto;
       }
     }
   }

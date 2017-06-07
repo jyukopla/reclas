@@ -32,6 +32,11 @@
              tal:replace="structure context/@@plone.app.standardtiles.navigation">
         </div>
       </div>
+      <div class="jyu-brand">
+        <a href="https://www.jyu.fi/en/"
+           title="University of Jyväskylä">
+        </a>
+      </div>
     </div>
   </div>
 </nav>

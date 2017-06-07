@@ -28,12 +28,14 @@
            title="Email">
         </a>
       </p>
+      <!--
       <p>
         <a href="https://www.jyu.fi/en/"
            class="jyu-brand"
            title="University of Jyväskylä">
         </a>
       </p>
+      -->
     </div>
   </div>
 </footer>
