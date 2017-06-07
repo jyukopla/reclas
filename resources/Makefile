@@ -14,7 +14,7 @@ watch: node_modules $(SOURCES)
 	yarn run watch
 
 clean:
-	$(RM) -r theme
+	$(RM) -r theme .plone
 
 DEPLOY_HOST = jalava.cc.jyu.fi
 DEPLOY_HASH = $(shell git rev-parse --short HEAD)$(DIRTY_SOURCES_FLAG)

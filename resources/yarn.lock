@@ -2432,6 +2432,10 @@ mkdirp@~0.3.5:
   version "0.3.5"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
 
+"mockup@git+https://github.com/plone/mockup.git#abfaeb11036b6a6ab2bf7c7e51f468ea5e77ed7b":
+  version "2.4.1"
+  resolved "git+https://github.com/plone/mockup.git#abfaeb11036b6a6ab2bf7c7e51f468ea5e77ed7b"
+
 moment@^2.11.2:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"

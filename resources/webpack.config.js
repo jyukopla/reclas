@@ -15,7 +15,9 @@ const PATHS = {
   dist: path.join(__dirname, DISTPATH, THEMENAME),
   mosaic: path.join(
     __dirname, 'node_modules', 'plone-mosaic',
-    'src', 'plone', 'app', 'mosaic', 'browser', 'static', 'js')
+    'src', 'plone', 'app', 'mosaic', 'browser', 'static', 'js'),
+  mockup: path.join(
+    __dirname, 'node_modules', 'mockup', 'mockup', 'patterns')
 };
 
 const PLONE = new PlonePlugin({
@@ -30,6 +32,9 @@ const PLONE = new PlonePlugin({
     path.join(THEMENAME, 'media', '*'),
     path.join(THEMENAME, '?(*.js|*.css|*.less|*.scss)')
   ],
+  variables: {
+    'mockup-patterns-relateditems': '"' + path.join(PATHS.mockup, 'relateditems', 'pattern.relateditems.less') +'"'
+  },
   debug: false
 });
 
@@ -45,7 +50,10 @@ const common = {
     extensions: ['.js', '.jsx', '.json'],
     alias: {
       'mosaic': path.join(PATHS.mosaic, 'mosaic.pattern'),
-      'mosaic-url': path.join(PATHS.mosaic)
+      'mosaic-url': path.join(PATHS.mosaic),
+      'mockup-patterns-relateditems': path.join(PATHS.mockup, 'relateditems', 'pattern'),
+      'mockup-patterns-relateditems-url': path.join(PATHS.mockup, 'relateditems'),
+      'mockup-patterns-relateditems-upload': path.join(PATHS.mockup, 'relateditems', 'upload')
     }
   },
   module: {

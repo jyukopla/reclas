@@ -3,13 +3,13 @@
 $gray-description: #68737a;
 
 @include media-breakpoint-up(xs) {
-  .row > div > article {
+  .container-content {
     box-shadow: 0 20px 20px $gray;
     background: white;
 
     padding: 20px 20px;
   }
-  .row > div > article, body#tinymce {
+  .container-content, body#tinymce {
     h1.documentFirstHeading {
       font-weight: bold;
     }
@@ -27,19 +27,19 @@ $gray-description: #68737a;
 }
 
 @include media-breakpoint-up(md) {
-  .row > div > article {
+  .container-content {
     padding: 40px 40px;
   }
 }
 
 @include media-breakpoint-up(lg) {
-  .row > div > article {
+  .container-content {
     padding: 60px 60px;
   }
 }
 
 @include media-breakpoint-up(xl) {
-  .row > div > article {
+  .container-content {
     padding: 70px 100px;
   }
 }
