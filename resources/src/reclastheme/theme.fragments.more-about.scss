@@ -14,15 +14,18 @@
     display: flex;
     align-items: center;
 
+    border-top: 60px solid $gray-dark;
+
     &:before {
+      content: "";
       position: absolute;
-      display: block;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       background: $gray-dark;
       opacity: 0.333;
+      z-index: -1;
     }
 
     nav {
