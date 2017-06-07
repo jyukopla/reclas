@@ -9,7 +9,7 @@
     <link rel="stylesheet" data-bundle="diazo">
       <xsl:attribute name="href">
         <xsl:value-of select="$portal_url" />
-        <xsl:text>/++theme++jyunitytheme-custom/custom.css</xsl:text>
+        <xsl:text>/++theme++reclastheme-custom/custom.css</xsl:text>
       </xsl:attribute>
     </link>
   </after>
@@ -25,7 +25,7 @@
       </xsl:attribute>
       <xsl:attribute name="src">
         <xsl:value-of select="$portal_url" />
-        <xsl:text>/++theme++jyunitytheme-custom/custom.js</xsl:text>
+        <xsl:text>/++theme++reclastheme-custom/custom.js</xsl:text>
       </xsl:attribute>
     </xsl:element>
   </after>

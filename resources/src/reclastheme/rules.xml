@@ -3,8 +3,7 @@
     xmlns="http://namespaces.plone.org/diazo"
     xmlns:css="http://namespaces.plone.org/diazo/css"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xi="http://www.w3.org/2001/XInclude"
-    if-content="/html/body[@id='visual-portal-wrapper']">
+    xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <!-- Drop default stylesheets and scripts -->
   <drop content="//link[@rel='stylesheet']" />
@@ -24,5 +23,11 @@
   <xi:include href="++theme++reclastheme-custom/custom.xml">
     <xi:fallback/>
   </xi:include>
+
+  <!-- Simplify workflow for users with enough permission -->
+  <drop content="//li[contains(@class, 'plonetoolbar-workfow-transition')]/child::a[@id='workflow-transition-retract']"
+        css:if-content="#workflow-transition-reject" />
+  <drop content="//li[contains(@class, 'plonetoolbar-workfow-transition')]/child::a[@id='workflow-transition-submit']"
+        css:if-content="#workflow-transition-publish" />
 
 </rules>
