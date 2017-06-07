@@ -1,14 +1,24 @@
 @import './theme.bootstrap.scss';
 
+$gray-description: #68737a;
+
 @include media-breakpoint-up(xs) {
   .row > div > article {
-    h1.documentFirstHeading {
-      font-weight: bold;
-    }
     box-shadow: 0 20px 20px $gray;
     background: white;
 
     padding: 20px 20px;
+  }
+  .row > div > article, body#tinymce {
+    h1.documentFirstHeading {
+      font-weight: bold;
+    }
+
+    .documentDescription {
+      font-size: $font-size-lg;
+      margin-bottom: $spacer * 2;
+      color: $gray-description;
+    }
 
     h2 {
       font-family: $font-family-sans-serif;
