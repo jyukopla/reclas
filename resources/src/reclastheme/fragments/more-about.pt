@@ -1,14 +1,15 @@
 <footer class="container-fluid more-about"
          tal:define="portal_state context/@@plone_portal_state;
                      portal portal_state/portal;
-                     portal_url portal/absolute_url">
+                     portal_url portal/absolute_url;
+                     about_path python:context.portal_registry['reclas.moreAboutPath']">
   <nav>
     <p>
       Remarkable education and<br/>
       research for changing society.
     </p>
     <p>
-      <a href="${portal_url}/en/about"
+      <a href="${portal_url}${about_path}"
          title="More about ReCLaS">
         More about ReCLaS
       </a>

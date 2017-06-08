@@ -149,4 +149,12 @@
     <value>++sitelayout++reclas/ajax.html</value>
   </record>
 
+  <!-- ReCLaS -->
+  <record name="reclas.moreAboutPath">
+    <field type="plone.registry.field.ASCIILine">
+      <required>true</required>
+    </field>
+    <value>/en/about</value>
+  </record>
+
 </registry>
