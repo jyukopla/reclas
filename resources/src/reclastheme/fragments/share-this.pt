@@ -1,0 +1,23 @@
+<tal:condition define="portal_type context/portal_type|string:"
+               condition="python:portal_type in ['Document',
+                                                 'News Item',
+                                                 'jyu.newsitem.dissertation',
+                                                 'jyu.newsitem.internal_news_item',
+                                                 'jyu.newsitem.external_news_item',
+                                                 'jyu.newsitem.internal_event',
+                                                 'jyu.newsitem.externa_event']">
+<aside class="share-this"
+       tal:define="context_state context/@@plone_context_state;
+                   url context_state/object_url;
+                   title context_state/object_title;
+                   facebook string:https://www.facebook.com/sharer.php;
+                   twitter string:https://twitter.com/intent/tweet;
+                   linkedin string:https://www.linkedin.com/shareArticle;
+                   facebook_url string:${facebook}?u=${url};
+                   twitter_url string:${twitter}?url=${url}&title=${title};
+                   linkedin_url string:${linkedin}?url=${url}&title=${title}">
+  <a href="${facebook_url}" class="fa fa-facebook" title="Share on Facebook"></a>
+  <a href="${twitter_url}" class="fa fa-twitter" title="Share on Twitter"></a>
+  <a href="${linkedin_url}" class="fa fa-linkedin" title="Share on LinkedIn"></a>
+</aside>
+</tal:condition>

@@ -1,0 +1,32 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  .share-this {
+    position: absolute;
+    right: 0;
+    top: -($spacer * 1.5 + $font-size-base * $line-height-base);
+    background: $red;
+    color: $white;
+
+    padding: $spacer $spacer * 2 $spacer * 0.5 $spacer * 2;
+
+    a {
+      padding-right: $spacer;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .fa-facebook:before {
+      content: url('./icons/fontawesome-facebook-white.svg');
+    }
+
+    .fa-twitter:before {
+      content: url('./icons/fontawesome-twitter-white.svg');
+    }
+
+    .fa-linkedin:before {
+      content: url('./icons/fontawesome-linkedin-white.svg');
+    }
+  }
+}
