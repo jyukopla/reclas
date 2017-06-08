@@ -16,10 +16,10 @@
                      en_root context/en/absolute_url|nothing;
                      tg context/@@tg|nothing;">
       <div class="header-brand">
-        <a class="navbar-brand" href="#"
+        <a href="#"
            tal:condition="navigation_root_title"
            tal:attributes="href navigation_root_url; title navigation_root_title"></a>
-        <a class="navbar-brand" href="#"
+        <a href="#"
            tal:condition="not:navigation_root_title"
            tal:attributes="href navigation_root_url; title portal_title"></a>
         <p>
@@ -27,15 +27,15 @@
           Language in Changing Society
         </p>
       </div>
-      <div class="jyu-brand">
-        <a href="https://www.jyu.fi/en/"
-           title="University of Jyväskylä">
-        </a>
-      </div>
       <div class="header-nav">
         <div tal:define="dummy python:request.set('path', '/');"
              tal:replace="structure context/@@plone.app.standardtiles.navigation">
         </div>
+      </div>
+      <div class="header-brand-uni">
+        <a href="https://www.jyu.fi/en/"
+           title="University of Jyväskylä">
+        </a>
       </div>
     </div>
   </div>
