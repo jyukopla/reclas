@@ -273,6 +273,11 @@
   </record>
 
   <!-- ReCLaS -->
+  <record field="purgedContentTypes" interface="plone.app.caching.interfaces.IPloneCacheSettings">
+    <value purge="false">
+      <element>BlogEntry</element>
+    </value>
+  </record>
   <record name="reclas.moreAboutPath">
     <field type="plone.registry.field.ASCIILine">
       <required>true</required>
