@@ -21,12 +21,14 @@
   <property name="add_permission">cmf.AddPortalContent</property>
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
+    <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
+    <element value="plone.app.blocks.layoutbehavior.ILayoutAware"/>
     <element value="plone.app.content.interfaces.INameFromTitle"/>
     <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
     <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
+    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
     <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
     <element value="plone.app.drafts.interfaces.IDraftable"/>
-    <element value="plone.app.blocks.layoutbehavior.ILayoutAware"/>
     <element value="plone.app.versioningbehavior.behaviors.IVersionable"/>
   </property>
   <property name="schema_policy">dexterity</property>
