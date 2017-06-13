@@ -1,5 +1,9 @@
 @import './theme.bootstrap.scss';
 
+.mosaic-enabled {
+  overflow-x: hidden;
+}
+
 .mosaic-enabled, .mosaic-grid, .template-layout {
   .mosaic-grid-row {
     position: relative;

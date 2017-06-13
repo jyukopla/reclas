@@ -1,10 +1,7 @@
-<tal:hero
-    tal:define="image context/image|nothing;"
-    tal:condition="image">
-  <aside class="container-fluid hero"
-         tal:define="scales context/@@images;
-                     image_scale python:image and scales.scale('image', scale='hero', direction='down') or '';
-                     image_url python:image_scale and image_scale.url or '';"
-         tal:attributes="style string:background-image:url($image_url)">
-  </aside>
-</tal:hero>
+<aside class="container-fluid hero"
+    tal:define="scales context/@@images;
+                image_scale python:scales.scale('image', scale='hero', direction='down') or '';
+                image_url python:image_scale and image_scale.url or '';"
+    tal:condition="image_url"
+    tal:attributes="style string:background-image:url($image_url)">
+</aside>

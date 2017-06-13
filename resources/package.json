@@ -27,7 +27,7 @@
     "bootstrap": "4.0.0-alpha.6",
     "brace": "^0.10.0",
     "mockup": "git+https://github.com/plone/mockup.git#abfaeb11036b6a6ab2bf7c7e51f468ea5e77ed7b",
-    "plone-mosaic": "git+https://github.com/plone/plone.app.mosaic.git#e4073deec77d6096b98c7866f16d567c69005e8b",
+    "plone-mosaic": "git+https://github.com/plone/plone.app.mosaic.git#068062e803648b8d409c7e4c7014f079ede28f1e",
     "plonetheme.barceloneta": "git+https://github.com/plone/plonetheme.barceloneta.git#d9f71f2f02cfb28fe9c0e2844dd4be9fb8b9fb6c"
   },
   "scripts": {
