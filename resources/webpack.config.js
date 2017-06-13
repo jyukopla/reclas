@@ -51,8 +51,8 @@ const common = {
     alias: {
       'mosaic': path.join(PATHS.mosaic, 'mosaic.pattern'),
       'mosaic-url': path.join(PATHS.mosaic),
-      'mockup-patterns-inlinevalidation': path.join(
-        PATHS.src, 'extensions', 'mockup-patterns-inlinevalidation'),
+      'mockup-patterns-inlinevalidation': path.join(PATHS.src, 'extensions', 'mockup-patterns-inlinevalidation'),
+      'mockup-patterns-formunloadalert': path.join(PATHS.mockup, 'formunloadalert', 'pattern'),
       'mockup-patterns-relateditems': path.join(PATHS.mockup, 'relateditems', 'pattern'),
       'mockup-patterns-relateditems-url': path.join(PATHS.mockup, 'relateditems'),
       'mockup-patterns-relateditems-upload': path.join(PATHS.mockup, 'relateditems', 'upload')
