@@ -2,10 +2,8 @@
 
 @include media-breakpoint-up(xs) {
   .document-date {
-    color: $red;
     font-size: $small-font-size;
     font-weight: bold;
     font-family: $font-family-sans-serif;
-    margin-bottom: $spacer * 2;
   }
 }

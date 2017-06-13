@@ -3,13 +3,25 @@
 <div class="row" i18n:domain="plone">
   <div class="col-12">
     <div class="document-date"
-          tal:define="date context/Date|nothing|string:;
+          tal:define="portal_state context/@@plone_portal_state;
+                      portal portal_state/portal;
+                      portal_url portal_state/portal_url;
+                      date context/Date|nothing|string:;
                       portal_type context/portal_type/lower|string:;
                       modified context/ModificationDate|nothing;
                       date python:'news' in portal_type and date or modified;
-                      date python:date and DateTime(date) or None"
+                      date python:date and DateTime(date) or None;
+                      tags context/Subject"
           tal:condition="date">
-      <div tal:content="python:date.strftime('%d %b %Y')">11.3.2017</div>
+      <span tal:content="python:date.strftime('%d %b %Y')">11.3.2017</span>
+      <tal:tags tal:condition="tags">
+        in
+        <tal:tag repeat="tag tags">
+          <a href="${portal_url}/@@search?Subject:list=${tag}"
+             title="Posts by ${tag}">${tag}</a><span
+             tal:condition="not:repeat/tag/end" tal:omit-tag="">,</span>
+        </tal:tag>
+      </tal:tags>
     </div>
   </div>
 </div>

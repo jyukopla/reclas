@@ -53,5 +53,12 @@
       margin-right: $spacer * 2;
       margin-bottom: 0;
     }
+
+    &.mosaic-panel {
+      .mosaic-first_author_image-tile,
+      .mosaic-second_author_image-tile {
+        z-index: 101;
+      }
+    }
   }
 }

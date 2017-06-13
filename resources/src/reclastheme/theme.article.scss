@@ -9,6 +9,7 @@ $gray-description: #68737a;
   }
   .container-content, body#tinymce {
     h1.documentFirstHeading {
+      margin-top: $spacer * 2;
       font-weight: bold;
     }
 
