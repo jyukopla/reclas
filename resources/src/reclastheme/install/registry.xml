@@ -17,7 +17,9 @@
 "paste_as_text": false,
 "paste_data_images": false,
 "paste_word_valid_elements": "b,strong,i,em,h1,h2,h3,h4,table,thead,tfoot,tbody,tr,th,td,ul,ol,li,p,a[href]",
-"paste_retain_style_properties": ""
+"paste_retain_style_properties": "",
+"relative_urls": false,
+"convert_urls": false
     }</value>
   </record>
 
