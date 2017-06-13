@@ -12,6 +12,7 @@
 .fa-search:before { width: 0.9276em; content: url(./icons/fontawesome-search-white.svg); }
 .fa-twitter:before { width: 0.9286em; content: url(./icons/fontawesome-twitter-red.svg); }
 
+/* Blogentry */
 .contenttype-blogentry:before {
   content: url(./icons/fontawesome-doc-inv-black.svg);
   width: 0.8571em;
@@ -19,4 +20,18 @@
 .contenttype-blogentry:after{
   content: url(./icons/fontawesome-doc-inv-white.svg);
   width: 0.8571em;
+}
+
+/* Collective roster */
+.contenttype-collective-roster-roster:before {
+  content: url(icons/entypo-users-black.svg);
+}
+.contenttype-collective-roster-roster:after{
+  content: url(icons/entypo-users-white.svg);
+}
+.contenttype-collective-roster-person:before {
+  content: url(icons/entypo-user-black.svg);
+}
+.contenttype-collective-roster-person:after{
+  content: url(icons/entypo-user-white.svg);
 }
