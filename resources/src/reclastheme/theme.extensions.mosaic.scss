@@ -7,6 +7,14 @@
   }
 }
 
+.mosaic-tile-align-left {
+  float: left;
+}
+
+.mosaic-tile-align-right {
+  float: left;
+}
+
 // Mosaic Grid (responsive)
 .mosaic-grid {
   .mosaic-width-full {
@@ -18,7 +26,7 @@
     @include media-breakpoint-up(xs) {
       @include make-col($grid-columns);
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       @include make-col($grid-columns / 2);
     }
   }
@@ -27,10 +35,10 @@
     @include media-breakpoint-up(xs) {
       @include make-col($grid-columns);
     }
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       @include make-col($grid-columns / 2);
     }
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       @include make-col($grid-columns / 4);
     }
   }
@@ -40,6 +48,9 @@
       @include make-col($grid-columns);
     }
     @include media-breakpoint-up(md) {
+      @include make-col($grid-columns / 2);
+    }
+    @include media-breakpoint-up(lg) {
       @include make-col(($grid-columns / 4) * 3);
     }
   }

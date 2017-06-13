@@ -1,11 +1,7 @@
 <tal:condition define="portal_type context/portal_type|string:"
-               condition="python:portal_type in ['Document',
-                                                 'News Item',
-                                                 'jyu.newsitem.dissertation',
-                                                 'jyu.newsitem.internal_news_item',
-                                                 'jyu.newsitem.external_news_item',
-                                                 'jyu.newsitem.internal_event',
-                                                 'jyu.newsitem.externa_event']">
+               condition="python:portal_type in ['News Item',
+                                                 'Event',
+                                                 'BlogEntry']">
 <aside class="share-this"
        tal:define="context_state context/@@plone_context_state;
                    url context_state/object_url;

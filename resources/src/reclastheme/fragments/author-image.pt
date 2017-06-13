@@ -1,0 +1,15 @@
+<tal:block define="scales context/@@images;
+                   name python:request.get('field').split('.')[-1];
+                   title python:name.replace('_image', '_name');
+                   title python:getattr(context, title, None);
+                   thumbnail python:scales.scale(name, scale='author', direction='down')">
+<img class="author-image"
+     tal:condition="thumbnail"
+     tal:attributes="alt title;
+                     title title;
+                     src thumbnail/url;
+                     width thumbnail/width" />
+<div class="author-image"
+     tal:condition="not:thumbnail">
+</div>
+</tal:block>

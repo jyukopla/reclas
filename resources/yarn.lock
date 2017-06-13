@@ -2796,9 +2796,9 @@ pkg-dir@^1.0.0:
   dependencies:
     find-up "^1.0.0"
 
-"plone-mosaic@git+https://github.com/plone/plone.app.mosaic.git#0d40840ac8d297edd7687e13a131855bd716ba8a":
+"plone-mosaic@git+https://github.com/plone/plone.app.mosaic.git#e4073deec77d6096b98c7866f16d567c69005e8b":
   version "0.0.0"
-  resolved "git+https://github.com/plone/plone.app.mosaic.git#0d40840ac8d297edd7687e13a131855bd716ba8a"
+  resolved "git+https://github.com/plone/plone.app.mosaic.git#e4073deec77d6096b98c7866f16d567c69005e8b"
   dependencies:
     brace "^0.8.0"
 

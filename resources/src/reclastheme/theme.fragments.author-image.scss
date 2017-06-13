@@ -1,0 +1,13 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  .author-image {
+    display: inline-block;
+    border-radius: 100px;
+  }
+  div.author-image {
+    width: 143px;
+    height: 143px;
+    border: 1px dotted $gray;
+  }
+}

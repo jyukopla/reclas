@@ -1,0 +1,40 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <fieldset name="first_author" label="First author">
+      <field name="first_author_name" type="zope.schema.TextLine">
+        <description/>
+        <required>False</required>
+        <title>First author name</title>
+        <default>First Author</default>
+      </field>
+      <field name="first_author_image" type="plone.namedfile.field.NamedBlobImage">
+        <description/>
+        <required>False</required>
+        <title>First author image</title>
+      </field>
+      <field name="first_author_description" type="plone.app.textfield.RichText">
+        <description/>
+        <required>False</required>
+        <title>First author description</title>
+        <default>Description</default>
+      </field>
+    </fieldset>
+    <fieldset name="second_author" label="Second author">
+      <field name="second_author_name" type="zope.schema.TextLine">
+        <description/>
+        <required>False</required>
+        <title>Second author name</title>
+      </field>
+      <field name="second_author_image" type="plone.namedfile.field.NamedBlobImage">
+        <description/>
+        <required>False</required>
+        <title>Second author image</title>
+      </field>
+      <field name="second_author_description" type="plone.app.textfield.RichText">
+        <description/>
+        <required>False</required>
+        <title>Second author description</title>
+      </field>
+    </fieldset>
+  </schema>
+</model>

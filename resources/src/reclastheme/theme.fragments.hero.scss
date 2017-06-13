@@ -9,4 +9,7 @@
 
     margin-bottom: -80px;
   }
+  [data-panel="hero"].mosaic-panel .mosaic-tile {
+    z-index: 0;
+  }
 }

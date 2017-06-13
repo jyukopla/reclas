@@ -11,8 +11,13 @@
 
 @import './theme.fragments.header.scss';
 @import './theme.fragments.hero.scss';
-@import './theme.article.scss';
-@import './theme.icons.scss';
+@import './theme.fragments.dateline.scss';
+@import './theme.fragments.author-image.scss';
 @import './theme.fragments.share-this.scss';
 @import './theme.fragments.more-about.scss';
 @import './theme.fragments.in-short.scss';
+
+@import './theme.article.scss';
+@import './theme.icons.scss';
+
+@import './theme.designs.blogentry.scss';

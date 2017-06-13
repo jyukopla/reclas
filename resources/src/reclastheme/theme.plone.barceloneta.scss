@@ -335,3 +335,11 @@ table.invisible { visibility: visible !important; }
 .plone-modal .plone-modal-dialog .plone-modal-header .plone-modal-close {
   margin-top: 0;
 }
+
+// Fix modal headings
+.plone-modal .plone-modal-header {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+  }
+}

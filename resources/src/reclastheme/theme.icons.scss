@@ -11,3 +11,12 @@
 .fa-email:before { width: 0.8571em; content: url(./icons/fontawesome-mail-red.svg); }
 .fa-search:before { width: 0.9276em; content: url(./icons/fontawesome-search-white.svg); }
 .fa-twitter:before { width: 0.9286em; content: url(./icons/fontawesome-twitter-red.svg); }
+
+.contenttype-blogentry:before {
+  content: url(./icons/fontawesome-doc-inv-black.svg);
+  width: 0.8571em;
+}
+.contenttype-blogentry:after{
+  content: url(./icons/fontawesome-doc-inv-white.svg);
+  width: 0.8571em;
+}

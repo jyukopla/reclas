@@ -1,0 +1,57 @@
+@import './theme.bootstrap.scss';
+
+@include media-breakpoint-up(xs) {
+  [data-panel="authors"] {
+    margin-top: 80px;
+    margin-bottom: 50px;
+
+    text-align: center;
+
+    .mosaic-static-tile {
+      display: none;
+      font-weight: bold;
+      font-family: $font-family-sans-serif;
+      font-size: $small-font-size;
+    }
+
+    .mosaic-first_author_image-tile,
+    .mosaic-second_author_image-tile {
+      margin-bottom: $spacer;
+    }
+
+    .mosaic-first_author_name-tile,
+    .mosaic-second_author_name-tile {
+      .mosaic-tile-content, > span {
+        font-size: $font-size-h3;
+        color: $red;
+        min-height: $font-size-h3 + $spacer;
+        > p { min-height: inherit; }
+      }
+      margin-bottom: $spacer;
+    }
+
+    .mosaic-first_author_description-tile,
+    .mosaic-second_author_description-tile {
+      margin-bottom: 50px;
+      line-height: 2;
+    }
+
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  [data-panel="authors"] {
+    text-align: left;
+
+    .mosaic-static-tile {
+      display: block;
+    }
+
+    .mosaic-first_author_image-tile,
+    .mosaic-second_author_image-tile {
+      float: left;
+      margin-right: $spacer * 2;
+      margin-bottom: 0;
+    }
+  }
+}
