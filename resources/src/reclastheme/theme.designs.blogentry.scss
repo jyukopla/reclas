@@ -1,7 +1,17 @@
 @import './theme.bootstrap.scss';
 
+
 @include media-breakpoint-up(xs) {
   .portaltype-blogentry {
+    .container-content,
+    [data-panel="authors"] {
+      @include make-container-max-widths((
+        sm: 540px,
+        md: 720px,
+        lg: 880px,
+        xl: 880px
+      ));
+    }
     .container-content footer {
       display: none;
     }
