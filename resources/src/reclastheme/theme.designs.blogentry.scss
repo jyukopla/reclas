@@ -52,10 +52,8 @@
     }
 
   }
-}
 
-@include media-breakpoint-up(lg) {
-  [data-panel="authors"] {
+  [data-panel="authors"] .mosaic-width-full {
     text-align: left;
 
     .mosaic-static-tile {
