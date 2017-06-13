@@ -28,8 +28,8 @@
         </p>
       </div>
       <div class="header-nav">
-        <div tal:define="dummy python:request.set('path', '/');"
-             tal:replace="structure context/@@plone.app.standardtiles.navigation/esi-body">
+        <div tal:define="tile context/@@plone.app.standardtiles.navigation"
+             tal:replace="structure python:tile.split('<body>')[-1].split('</body>')[0]">
         </div>
       </div>
       <div class="header-brand-uni">
