@@ -1,6 +1,6 @@
 <aside class="container-fluid hero"
-    tal:define="scales context/@@images;
-                image_scale python:scales.scale('image', scale='hero', direction='down') or '';
+    tal:define="scales context/@@images|nothing;
+                image_scale python:scales and scales.scale('image', scale='hero', direction='down') or '';
                 image_url python:image_scale and image_scale.url or '';"
     tal:condition="image_url"
     tal:attributes="style string:background-image:url($image_url)">
