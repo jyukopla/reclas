@@ -1,1 +1,0 @@
-import './ploneformgen.less';
