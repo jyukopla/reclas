@@ -26,9 +26,9 @@
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
     "brace": "^0.10.0",
-    "mockup": "git+https://github.com/plone/mockup.git#abfaeb11036b6a6ab2bf7c7e51f468ea5e77ed7b",
-    "plone-mosaic": "git+https://github.com/plone/plone.app.mosaic.git#6a027f5db5ef5c133d6ca0ef8a2abe8f1fe9d462",
-    "plonetheme.barceloneta": "git+https://github.com/plone/plonetheme.barceloneta.git#d9f71f2f02cfb28fe9c0e2844dd4be9fb8b9fb6c"
+    "mockup": "git+https://github.com/plone/mockup.git#datakurre-custom",
+    "plone-mosaic": "git+https://github.com/plone/plone.app.mosaic.git#datakurre-custom",
+    "plonetheme.barceloneta": "git+https://github.com/plone/plonetheme.barceloneta.git#less2sass"
   },
   "scripts": {
     "watch": "webpack-dev-server",
